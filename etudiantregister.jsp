@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
- pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+ pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,18 +45,18 @@
         <fieldset>
             <h3>Renseignez vos informations</h3>
             <div>
-                <label for="lastname">Nom : </label>
-                <input type="text" id="lastname" name="lastname" placeholder="Nom" required>
+                <label for="nom">Nom : </label>
+                <input type="text" id="nom" name="nom" placeholder="Nom" required>
             </div>
 
             <div>
-                <label for="firstname">Prénom : </label>
-                <input type="text" id="firstname" name="firstname" placeholder="Prénom(s)" required>
+                <label for="prenom">Prénom : </label>
+                <input type="text" id="prenom" name="prenom" placeholder="Prénom(s)" required>
             </div>
 
             <div>
                 <label for="date_naissance">Date de naissance : </label>
-                <input type="date" id="date_naissance" name="company" placeholder="Date de naissance" required>
+                <input type="date" id="date_naissance" name="date_naissance" placeholder="Date de naissance" required>
             </div>
         
             <div>
@@ -64,8 +64,8 @@
                 <input type="text" id="email" name="email" placeholder="email" required>    
             </div>
             <div>
-                <label for="phone_number">Numéro de téléphone : </label>
-                <input type="text" name="phone_number" id="phone_number" placeholder="Numéro de téléphone">    
+                <label for="telephone">Numéro de téléphone : </label>
+                <input type="text" name="telephone" id="telephone" placeholder="Numéro de téléphone">    
             </div>
             <div>
                 <input type="submit" value="Enregistrer">

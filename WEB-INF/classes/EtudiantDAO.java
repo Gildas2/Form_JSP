@@ -62,7 +62,7 @@ public class EtudiantDAO {
 
     private Connection getConnection() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.jdbc.Driver");
-        return DriverManager.getConnection("com.mysql.jdbc.Driver", "root", "");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3307/mon_application", "root", "");
     }
 
     private void printSQLException(SQLException ex) {

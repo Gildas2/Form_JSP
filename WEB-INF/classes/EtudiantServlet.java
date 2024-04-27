@@ -31,13 +31,21 @@ public class EtudiantServlet extends HttpServlet {
 
         Etudiant etudiant = new Etudiant(nom, prenom, dateNaissance, email, telephone);
 
+        int result = 0;
+        String msg = "Etudiant ajouté avec succès";
         try {
-            etudiantDAO.ajouterEtudiant(etudiant);
+            result = etudiantDAO.ajouterEtudiant(etudiant);
+            if(result == 0){
+                msg = "Etudiant n'a pas ete ajouté";
+            }
         } catch (Exception e) {
+           msg = e.getMessage();
            System.err.println(e.getMessage());
         }
 
-        response.sendRedirect("etudiantdetails.jsp");
+        request.setAttribute("msg", msg);
+        request.setAttribute("result", result);
+        request.getRequestDispatcher("etudiantdetails.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -46,7 +54,7 @@ public class EtudiantServlet extends HttpServlet {
         try {
             etudiants = etudiantDAO.listerEtudiants();
             request.setAttribute("etudiants", etudiants);
-            request.getRequestDispatcher("etudiantdetails.jsp").forward(request, response);
+            request.getRequestDispatcher("etudiantlist.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
